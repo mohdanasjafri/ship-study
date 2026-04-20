@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Study Ship</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scene" aria-hidden="true">
+  <div class="streak s1"></div>
+  <div class="streak s2"></div>
+  <div class="streak s3"></div>
+  <div class="streak s4"></div>
+  <div class="streak s5"></div>
+
+  <div class="sign one">OPEN 24H</div>
+  <div class="sign two">Study • Ship</div>
+  <div class="sign three">NEON CITY</div>
+
+  <div class="rain" style="left:8%;animation-delay:.1s"></div>
+  <div class="rain" style="left:17%;animation-delay:.7s;animation-duration:1s"></div>
+  <div class="rain" style="left:26%;animation-delay:.3s;animation-duration:1.4s"></div>
+  <div class="rain" style="left:35%;animation-delay:1.1s"></div>
+  <div class="rain" style="left:44%;animation-delay:.5s;animation-duration:.9s"></div>
+  <div class="rain" style="left:54%;animation-delay:1.4s;animation-duration:1.3s"></div>
+  <div class="rain" style="left:63%;animation-delay:.2s"></div>
+  <div class="rain" style="left:72%;animation-delay:.9s;animation-duration:1.1s"></div>
+  <div class="rain" style="left:82%;animation-delay:1.6s"></div>
+  <div class="rain" style="left:91%;animation-delay:.4s;animation-duration:1s"></div>
+
+  <div class="particle" style="left:10%;top:100%;animation-delay:0s"></div>
+  <div class="particle p2" style="left:25%;top:100%;animation-delay:2s;animation-duration:14s"></div>
+  <div class="particle p3" style="left:40%;top:100%;animation-delay:4s;animation-duration:11s"></div>
+  <div class="particle p4" style="left:58%;top:100%;animation-delay:1s;animation-duration:13s"></div>
+  <div class="particle" style="left:72%;top:100%;animation-delay:6s"></div>
+  <div class="particle p2" style="left:85%;top:100%;animation-delay:3s;animation-duration:15s"></div>
+  <div class="particle p3" style="left:15%;top:100%;animation-delay:8s"></div>
+  <div class="particle p4" style="left:50%;top:100%;animation-delay:5s;animation-duration:16s"></div>
+</div>
+<div class="overlay" aria-hidden="true"></div>
+
+<section id="welcome" class="page active">
+  <h1>🚢 Study Ship</h1>
+  <input id="nameInput" type="text" placeholder="Enter your name">
+
+  <div class="role-box">
+    <label class="role-item">
+      <input type="radio" name="role" value="Captain" checked>
+      <span>Future Captain</span>
+    </label>
+    <label class="role-item">
+      <input type="radio" name="role" value="Chief Engineer">
+      <span>Future Chief Engineer</span>
+    </label>
+  </div>
+
+  <button onclick="enterDashboard()">Start</button>
+</section>
+
+<section id="dashboard" class="page">
+  <h2 id="welcomeText"></h2>
+  <div class="grid">
+    <button onclick="openSubject('Physics')">Physics</button>
+    <button onclick="openSubject('Chemistry')">Chemistry</button>
+    <button onclick="openSubject('Mathematics')">Mathematics</button>
+    <button onclick="openSimple('English')">English</button>
+    <button onclick="openSimple('Aptitude')">Aptitude</button>
+    <button onclick="openSimple('General Knowledge')">General Knowledge</button>
+    <button onclick="openSimple('About IMUCET')">About IMUCET</button>
+    <button onclick="openInterview()">Interview</button>
+  </div>
+</section>
+
+<section id="classPage" class="page">
+  <h2 id="classTitle"></h2>
+  <div class="grid">
+    <button onclick="openClass(11)">Class 11</button>
+    <button onclick="openClass(12)">Class 12</button>
+  </div>
+  <button class="back" onclick="showPage('dashboard')">Back</button>
+</section>
+
+<section id="chapterList" class="page">
+  <h2 id="chapterListTitle"></h2>
+  <div id="chapterContainer" class="grid"></div>
+  <button class="back" id="chapterBack">Back</button>
+</section>
+
+<section id="chapterPage" class="page">
+  <h2 id="chapterTitle"></h2>
+  <a href="#">Video</a>
+  <a href="#">Notes</a>
+  <a href="#">Questions</a>
+  <button class="back" onclick="showPage('chapterList')">Back</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
