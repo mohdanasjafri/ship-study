@@ -159,6 +159,30 @@ showPage('chapterList');
 }
 
 function openChapter(ch){
-document.getElementById('chapterTitle').innerText=ch;
-showPage('chapterPage');
+
+document.getElementById('chapterListTitle').innerText = ch;
+
+const box = document.getElementById('chapterContainer');
+
+box.innerHTML = '';
+
+const folders = [
+'Video',
+'Cheat_Sheets',
+'DPPs',
+'Notes',
+'QUES'
+];
+
+folders.forEach(folder=>{
+const b=document.createElement('button');
+b.innerText=folder;
+box.appendChild(b);
+});
+
+document.getElementById('chapterBack').onclick=()=>openClass(
+document.getElementById('chapterListTitle').innerText.includes('Class 12') ? 12 : 11
+);
+
+showPage('chapterList');
 }
