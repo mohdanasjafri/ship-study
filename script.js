@@ -70,17 +70,76 @@ showPage('classPage');
 }
 
 function openSimple(name){
-isPCM=false;
+
+let folders=[];
+
+if(name==='English' || name==='Aptitude' || name==='General Knowledge'){
+folders=['Cheat_Sheets','DPPs','Notes','QUES'];
+}
+
+if(name==='About IMUCET'){
+folders=[
+'Exam Pattern',
+'Eligibility',
+'Colleges',
+'Sponsorship',
+'Counselling',
+'Fees',
+'Merchant Navy',
+'Career Path',
+'Salary Information',
+'Documents Required',
+'Important Links'
+];
+}
+
 document.getElementById('chapterListTitle').innerText=name;
-document.getElementById('chapterContainer').innerHTML='<button>Content Coming Soon</button>';
+
+const box=document.getElementById('chapterContainer');
+box.innerHTML='';
+
+folders.forEach(folder=>{
+const b=document.createElement('button');
+b.innerText=folder;
+box.appendChild(b);
+});
+
 document.getElementById('chapterBack').onclick=()=>showPage('dashboard');
 showPage('chapterList');
 }
 
 function openInterview(){
-isPCM=false;
+
+const folders=[
+'Non_Tech',
+'Tech',
+'Maersk',
+'MSC',
+'SCI',
+'Great',
+'Fleet',
+'Scorpio',
+'Seaspan',
+'Synergy',
+'TORM',
+'VShips',
+'Tolani',
+'Ganpat',
+'Ship_Knowledge',
+'Other_Company'
+];
+
 document.getElementById('chapterListTitle').innerText='Interview';
-document.getElementById('chapterContainer').innerHTML='<button>Non-Technical</button><button>Technical</button>';
+
+const box=document.getElementById('chapterContainer');
+box.innerHTML='';
+
+folders.forEach(folder=>{
+const b=document.createElement('button');
+b.innerText=folder;
+box.appendChild(b);
+});
+
 document.getElementById('chapterBack').onclick=()=>showPage('dashboard');
 showPage('chapterList');
 }
